@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:6.0.8
+    container_name: mongodbR
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: appdatabase
+
+
+# cd docker
+# docker-compose up
+
+
+#Команда Docker-Compose up развёртывает сервисы веб-приложений и создаёт из docker-образа новые контейнеры, а также сети, тома и все конфигурации, указанные в файле Docker Compose.
+# Добавляя флаг -d, вы выполняете команду в раздельном или фоновом режиме, сохраняя возможность управления терминалом (чуть ниже рассмотрим примеры для наглядности).
+# docker container ls
+# docker exec -it c988ae35cd42 mongosh --username root --password root --authenticationDatabase admin
+#  use test_db
+# db.createCollection("User")
+# db.User.insert({name:"Roma",age:"22"})
+# exit
+# docker run -d --rm --name championship-db -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=secret mongo:6.0
+

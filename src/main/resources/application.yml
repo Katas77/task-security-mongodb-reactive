@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:root@localhost:27017/appdatabase?authSource=admin
+
+
+server:
+  port: 8081
+
+app:
+  security:
+    type: db
