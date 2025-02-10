@@ -1,68 +1,55 @@
-<center><font size="3" face="Georgia"> <h3> "Task tracker"
-</h3></font>
-</center>
-
-## Overview:
--  The "Task tracker" application is a small console application based on the Representational state Transfer software architecture. 
-- It implements Writing Controllers using Mono and Flux.
-  Working with MongoDB in a reactive paradigm.
-
-
-## Features:
-- find all users,
-- find user by ID,
-- create a user,
-- update user information,
-- delete user by ID.
-- find all tasks
-- find a specific task by ID
-- create a task;
-- update task;
-- add observer to task;
-- delete a task by ID.
-## Security
-- Receiving (both by list and by ID), updating and deleting user profiles should be available only to those clients who have one of the following roles: ROLE_USER, ROLE_MANAGER.
-- Getting a list of tasks, getting a task by ID, adding an observer are available to a user with one of the following roles: ROLE_USER, ROLE_MANAGER;
-- Creating, updating and deleting a task is available to a user with the ROLE_MANAGER role.
-
-
-## Prerequisites
+# Task Tracker
+## Обзор:
+### "Task tracker" — это небольшое консольное приложение, построенное на архитектуре Representational State Transfer (REST).
+### Оно реализует написание контроллеров с использованием Mono и Flux, а также работу с MongoDB в реактивном стиле.
+## Возможности:
+### Приложение предоставляет следующие функции:
+- Работа с пользователями:
+оиск всех пользователей
+- Поиск пользователя по ID
+- Создание пользователя
+- Обновление информации о пользователе
+- Удаление пользователя по ID
+- Работа с задачами:
+- Поиск всех задач
+- Поиск конкретной задачи по ID
+- Создание задачи
+- Обновление задачи
+- Назначение наблюдателя задаче
+- Удаление задачи по ID
+- Безопасность:
+  ## Доступ к различным операциям ограничен ролями пользователей:
+- Получение (как списков, так и по ID), обновление и удаление профилей пользователей доступны только клиентам с одной из ролей: ROLE_USER, ROLE_MANAGER.
+- Получение списка задач, получение задачи по ID и назначение наблюдателей доступны пользователям с одной из ролей: ROLE_USER, ROLE_MANAGER.
+- Создание, обновление и удаление задач доступно только пользователям с ролью ROLE_MANAGER.
+  ## Требования:
 - Java 17
-- Maven (for building the application)
+- Maven (для сборки приложения)
 - Spring Boot 3.2.3
 - Docker Desktop
-
-## Setup and Installation
-- Clone the repository:
-- git clone [https://github.com/Katas77]
-- Navigate to the project directory:
-- cd contacts-application
-- Build the application using Maven:
-- mvn clean install 
-- Run the application:
-### For general use:
-- Work with data-mongodb-reactive
-- Launch and configure the database via Docker
-- To run using Docker, you need to enter the following commands in the terminal:
-- cd docker   
-- docker-compose up
-
-
-
-###  Management
-"Task tracker" are managed through a simple command-line interface. 
-Input errors are handled gracefully, with prompts for correct input.
-
-## Technologies used:
-
+## Установка и настройка:
+- лонируйте репозиторий: git clone https://github.com/Katas77
+- ерейдите в директорию проекта:
+- оберите приложение с помощью Maven:
+## Для общего использования:
+Работайте с data-mongodb-reactive
+Запустите и настройте базу данных через Docker
+Чтобы запустить приложение с использованием Docker, введите следующие команды в терминале:
+```bash
+cd docker
+```
+```bash
+docker-compose up
+d docker
+```
+## Использованные технологии:
 - Java
 - Spring Boot
 - Docker
-- Webflux
+- Spring-boot-starter-webflux
 - Mongodb-reactive
--  Spring Security.
-
-
+- Spring Security
+## Обратная связь:
 ____
 ✉ Почта для обратной связи:
 <a href="">krp77@mail.ru</a>
