@@ -40,7 +40,6 @@ cd docker
 ```
 ```bash
 docker-compose up
-d docker
 ```
 ## Использованные технологии:
 - Java
