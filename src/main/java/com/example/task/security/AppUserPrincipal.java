@@ -1,6 +1,5 @@
 package com.example.task.security;
 
-
 import com.example.task.model.user.Role;
 import com.example.task.model.user.User;
 import lombok.RequiredArgsConstructor;

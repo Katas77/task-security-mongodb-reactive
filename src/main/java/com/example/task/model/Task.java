@@ -1,7 +1,5 @@
 package com.example.task.model;
 
-
-
 import com.example.task.model.status.TaskStatus;
 import com.example.task.model.user.User;
 import lombok.AllArgsConstructor;
@@ -14,7 +12,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
 import java.util.Set;
-
 
 @Data
 @NoArgsConstructor
@@ -40,8 +37,6 @@ public class Task {
     private User assignee;
     @ReadOnlyProperty
     private Set<User> observers;
-
-
 
 
 }

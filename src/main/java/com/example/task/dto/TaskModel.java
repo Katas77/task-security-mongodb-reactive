@@ -1,16 +1,12 @@
 package com.example.task.dto;
 
-
-
 import com.example.task.model.status.TaskStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.Instant;
 import java.util.Set;
-
 
 @Data
 @NoArgsConstructor

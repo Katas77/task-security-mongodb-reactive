@@ -12,6 +12,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import reactor.core.publisher.Mono;
 
 import java.time.Instant;
 
@@ -25,26 +26,31 @@ public class DatabaseInitializerConfig {
     private final UserRepository userRepository;
     private final TaskRepository taskRepository;
     private final PasswordEncoder passwordEncoder;
-    @PostConstruct
-    public void initializeDatabase() {
 
+    public Mono<Void> deleteAllUsers() {
+        return userRepository.deleteAll();
+    }
+    @PostConstruct
+    public void initializeDatabase() throws InterruptedException {
+        this.deleteAllUsers().block();
+        Thread.sleep(1000);
         User admin = User.builder()
                 .username("admin")
                 .email("admin@example.com")
-                .password(passwordEncoder.encode("admin123"))
+                .password(passwordEncoder.encode("admin"))
                 .roles(Collections.singleton(Role.from(RoleType.ROLE_MANAGER)))
                 .build();
-     admin= userRepository.save(admin).block();
-
+        admin = userRepository.save(admin).block();
         User user = User.builder()
                 .username("user")
                 .email("user@example.com")
                 .password(passwordEncoder.encode("user123"))
                 .roles(Set.of(Role.from(RoleType.ROLE_USER)))
                 .build();
-        user= userRepository.save(user).block();
+        user = userRepository.save(user).block();
 
         assert admin != null;
+        System.out.println(userRepository.findById(admin.getId()).blockOptional().orElseThrow().getId());
         assert user != null;
         Task task1 = Task.builder()
                 .name("First Task")

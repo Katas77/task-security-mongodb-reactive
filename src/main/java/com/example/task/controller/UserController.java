@@ -1,6 +1,5 @@
 package com.example.task.controller;
 
-
 import com.example.task.model.user.RoleType;
 import com.example.task.model.user.User;
 import com.example.task.mapper.UserMapper;
@@ -13,9 +12,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
 import java.security.Principal;
-
 @RestController
 @RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
