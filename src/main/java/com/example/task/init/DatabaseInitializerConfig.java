@@ -1,6 +1,5 @@
 package com.example.task.init;
 
-
 import com.example.task.model.Task;
 import com.example.task.model.status.TaskStatus;
 import com.example.task.model.user.Role;

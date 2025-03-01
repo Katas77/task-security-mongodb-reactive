@@ -1,6 +1,5 @@
 package com.example.task.mapper.impl;
 
-
 import com.example.task.model.user.User;
 import com.example.task.mapper.UserMapper;
 import com.example.task.dto.UserModel;

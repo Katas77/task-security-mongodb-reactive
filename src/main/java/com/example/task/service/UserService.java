@@ -1,6 +1,5 @@
 package com.example.task.service;
 
-
 import com.example.task.exception.MyException;
 import com.example.task.model.user.Role;
 import com.example.task.model.user.RoleType;
